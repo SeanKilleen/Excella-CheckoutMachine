@@ -23,7 +23,7 @@
             {
                 _total = 1000;
             }
-            if (SKU == 111)
+            if (SKU == Constants.SkuNumbers.CIGARETTES)
             {
                 _total = 500;
             }
