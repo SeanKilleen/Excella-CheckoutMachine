@@ -17,7 +17,7 @@
             }
             if (SKU == Constants.SkuNumbers.SALSA)
             {
-                _total = 100;
+                _total += 100;
             }
             if (SKU == Constants.SkuNumbers.WINE)
             {
