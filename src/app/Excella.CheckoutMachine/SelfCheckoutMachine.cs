@@ -25,7 +25,7 @@
             }
             if (SKU == Constants.SkuNumbers.CIGARETTES)
             {
-                _total = 500;
+                _total += 500;
             }
         }
     }
