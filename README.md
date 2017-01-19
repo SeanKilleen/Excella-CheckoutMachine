@@ -6,6 +6,7 @@ Our goal is to show a lasting history of how you can solve a problem like this u
 # Introducing the Problem: the "Self-Checkout Exercise"
 This is a common kata-style problem. The example we'll be using can be found below.
 
+You are a customer using a self-checkout at a supermarket. You scan the stock keeping unit (sku) of each product and review the total price you need to pay. If you have a bonus card, you can scan your bonus card to receive discounts. Current deals with bonus card include ½ off salsa as well as a buy 2 get 1 free for chips. There is a 50 cents surcharge for tobacco products. All scanned products must make a call to a remote inventory control system that logs the scanned products for inventory control purposes (assume a REST webservice call). A separate call is also made to an id verification system that will randomly select age-restricted products (e.g. alcohol and cigarettes) for age verification. A product selected for age verification cannot be added to the cart, and an `AgeVerificationException` should be thrown which asks the customer to take their item to a clerk for verification.
 
 The store only sells the following products:
 
