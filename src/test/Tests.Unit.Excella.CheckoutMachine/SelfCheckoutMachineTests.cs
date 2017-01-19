@@ -147,5 +147,23 @@ namespace Tests.Unit.Excella.CheckoutMachine
 
             Assert.That(result, Is.EqualTo(800));
         }
+        [Test]
+        public void Scan_WithBonusCard_WhenScanning7Chips_DiscountsTwiceOnly()
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(Constants.SkuNumbers.BONUS_CARD);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+
+            var result = sut.GetTotal();
+
+            Assert.That(result, Is.EqualTo(1000));
+        }
     }
 }
