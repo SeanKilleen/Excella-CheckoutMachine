@@ -1,4 +1,6 @@
-﻿namespace Excella.CheckoutMachine
+﻿using System;
+
+namespace Excella.CheckoutMachine
 {
     public class SelfCheckoutMachine
     {
@@ -6,12 +8,17 @@
 
         private bool _bonusCardScanned = false;
         private int salsaCount = 0;
+        private int chipCount = 0;
         public int GetTotal()
         {
             int discount = 0;
             if (_bonusCardScanned)
             {
                 discount = discount + (salsaCount*50);
+
+                var threeChipGroups = chipCount/3.0;
+                var chipDeals = Convert.ToInt32(Math.Floor(threeChipGroups));
+                discount = discount + (200*chipDeals);
             }
             return _total - discount;
         }
@@ -24,6 +31,7 @@
             }
             if (SKU == Constants.SkuNumbers.CHIPS)
             {
+                chipCount++;
                 _total += 200;
             }
             if (SKU == Constants.SkuNumbers.SALSA)
