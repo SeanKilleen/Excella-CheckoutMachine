@@ -3,7 +3,7 @@
     public class SelfCheckoutMachine
     {
         private int _total;
-
+        private bool _bonusCardScanned = false;
         public int GetTotal()
         {
             return _total;
@@ -11,6 +11,10 @@
 
         public void Scan(int SKU)
         {
+            if (SKU == Constants.SkuNumbers.BONUS_CARD)
+            {
+                _bonusCardScanned = true;
+            }
             if (SKU == Constants.SkuNumbers.CHIPS)
             {
                 _total += 200;
