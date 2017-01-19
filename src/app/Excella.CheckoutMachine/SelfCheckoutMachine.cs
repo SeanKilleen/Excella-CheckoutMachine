@@ -11,7 +11,7 @@
             int discount = 0;
             if (_bonusCardScanned)
             {
-                discount = discount + (salsaCount*40);
+                discount = discount + (salsaCount*50);
             }
             return _total - discount;
         }
