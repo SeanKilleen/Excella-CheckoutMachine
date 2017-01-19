@@ -20,7 +20,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         {
             var sut = new SelfCheckoutMachine();
 
-            sut.Scan(999); // I've chosen 999 as the bonus card SKU
+            sut.Scan(Constants.SkuNumbers.BONUS_CARD); 
 
             var result = sut.GetTotal();
 

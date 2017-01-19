@@ -14,6 +14,7 @@ namespace Excella.CheckoutMachine
             public const int WINE = 789;
             public const int CHIPS = 123;
             public const int SALSA = 456;
+            public const int BONUS_CARD = 999;
         }
     }
 }
