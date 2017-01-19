@@ -20,7 +20,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         {
             var sut = new SelfCheckoutMachine();
 
-            sut.Scan(999); // I've chosen 999 as the bonus card SKU
+            sut.Scan(Constants.SkuNumbers.BONUS_CARD); 
 
             var result = sut.GetTotal();
 
@@ -32,7 +32,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         {
             var sut = new SelfCheckoutMachine();
 
-            sut.Scan(123); 
+            sut.Scan(Constants.SkuNumbers.CHIPS); 
 
             var result = sut.GetTotal();
 
@@ -44,7 +44,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         {
             var sut = new SelfCheckoutMachine();
 
-            sut.Scan(456);
+            sut.Scan(Constants.SkuNumbers.SALSA);
 
             var result = sut.GetTotal();
 
@@ -56,7 +56,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         {
             var sut = new SelfCheckoutMachine();
 
-            sut.Scan(789);
+            sut.Scan(Constants.SkuNumbers.WINE);
 
             var result = sut.GetTotal();
 
@@ -68,7 +68,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         {
             var sut = new SelfCheckoutMachine();
 
-            sut.Scan(111);
+            sut.Scan(Constants.SkuNumbers.CIGARETTES);
 
             var result = sut.GetTotal();
 
