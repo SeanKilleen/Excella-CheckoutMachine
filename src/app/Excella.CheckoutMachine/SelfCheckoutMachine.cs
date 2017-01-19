@@ -33,6 +33,7 @@ namespace Excella.CheckoutMachine
 
         public void Scan(int SKU)
         {
+            _inventoryControlSystem.LogScannedItem(SKU);
             if (SKU == Constants.SkuNumbers.BONUS_CARD)
             {
                 _bonusCardScanned = true;

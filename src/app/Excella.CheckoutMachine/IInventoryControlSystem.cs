@@ -8,5 +8,6 @@ namespace Excella.CheckoutMachine
 {
     public interface IInventoryControlSystem
     {
+        void LogScannedItem(int sku);
     }
 }
