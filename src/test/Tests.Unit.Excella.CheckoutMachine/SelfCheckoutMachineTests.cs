@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
 using Excella.CheckoutMachine;
+using Moq;
+
 namespace Tests.Unit.Excella.CheckoutMachine
 {
     public class SelfCheckoutMachineTests
@@ -202,6 +204,20 @@ namespace Tests.Unit.Excella.CheckoutMachine
             var total = sut.GetTotal();
 
             Assert.That(total, Is.EqualTo(550));
+        }
+
+        [TestCase(Constants.SkuNumbers.CHIPS)]
+        [TestCase(Constants.SkuNumbers.SALSA)]
+        [TestCase(Constants.SkuNumbers.WINE)]
+        [TestCase(Constants.SkuNumbers.CIGARETTES)]
+        public void Scan_AnyProduct_LogsItToInventoryControl(int skuToTest)
+        {
+            var mockInventoryControl = new Mock<IInventoryControlSystem>();
+            var sut = new SelfCheckoutMachine(mockInventoryControl.Object);
+
+            sut.Scan(skuToTest);
+
+            mockInventoryControl.Verify(x=>x.LogScannedItem(skuToTest), Times.Once);
         }
     }
 }
