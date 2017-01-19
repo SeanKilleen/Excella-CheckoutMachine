@@ -50,5 +50,17 @@ namespace Tests.Unit.Excella.CheckoutMachine
 
             Assert.That(result, Is.EqualTo(100));
         }
+
+        [Test]
+        public void Scan_WithWine_ExpectTotalOf1000()
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(789);
+
+            var result = sut.GetTotal();
+
+            Assert.That(result, Is.EqualTo(1000));
+        }
     }
 }
