@@ -90,7 +90,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         }
 
         [Test]
-        public void Scan_WithTwoSalsasChips_ExpectTotalOf200()
+        public void Scan_WithTwoSalsas_ExpectTotalOf200()
         {
             var sut = new SelfCheckoutMachine();
 
