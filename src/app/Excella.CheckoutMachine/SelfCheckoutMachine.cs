@@ -10,6 +10,12 @@ namespace Excella.CheckoutMachine
         private int salsaCount = 0;
         private int chipCount = 0;
         private int tobaccoCount = 0;
+        private IInventoryControlSystem _inventoryControlSystem;
+
+        public SelfCheckoutMachine(IInventoryControlSystem inventoryControlSystem)
+        {
+            _inventoryControlSystem = inventoryControlSystem;
+        }
         public int GetTotal()
         {
             int discount = 0;
@@ -27,6 +33,7 @@ namespace Excella.CheckoutMachine
 
         public void Scan(int SKU)
         {
+            _inventoryControlSystem.LogScannedItem(SKU);
             if (SKU == Constants.SkuNumbers.BONUS_CARD)
             {
                 _bonusCardScanned = true;
