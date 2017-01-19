@@ -27,6 +27,17 @@ namespace Tests.Unit.Excella.CheckoutMachine
             Assert.That(result, Is.EqualTo(0));
         }
 
+        [TestCase(Constants.SkuNumbers.CHIPS, 200)]
+        public void Scan_WithSingleItem_ExpectTotalToBePriceOfThatItem(int singleItemSku, int expectedTotal)
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(singleItemSku);
+            var result = sut.GetTotal();
+
+            Assert.That(result, Is.EqualTo(expectedTotal));
+        }
+
         [Test]
         public void Scan_WithChips_ExpectTotalOf200()
         {
