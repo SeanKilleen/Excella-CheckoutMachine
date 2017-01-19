@@ -27,54 +27,19 @@ namespace Tests.Unit.Excella.CheckoutMachine
             Assert.That(result, Is.EqualTo(0));
         }
 
-        [Test]
-        public void Scan_WithChips_ExpectTotalOf200()
+        [TestCase(Constants.SkuNumbers.CHIPS, 200)]
+        [TestCase(Constants.SkuNumbers.SALSA, 100)]
+        [TestCase(Constants.SkuNumbers.WINE, 1000)]
+        [TestCase(Constants.SkuNumbers.CIGARETTES, 500)]
+        public void Scan_WithSingleItem_ExpectTotalToBePriceOfThatItem(int singleItemSku, int expectedTotal)
         {
             var sut = new SelfCheckoutMachine();
 
-            sut.Scan(Constants.SkuNumbers.CHIPS); 
-
+            sut.Scan(singleItemSku);
             var result = sut.GetTotal();
 
-            Assert.That(result, Is.EqualTo(200));
+            Assert.That(result, Is.EqualTo(expectedTotal));
         }
-
-        [Test]
-        public void Scan_WithSalsa_ExpectTotalOf100()
-        {
-            var sut = new SelfCheckoutMachine();
-
-            sut.Scan(Constants.SkuNumbers.SALSA);
-
-            var result = sut.GetTotal();
-
-            Assert.That(result, Is.EqualTo(100));
-        }
-
-        [Test]
-        public void Scan_WithWine_ExpectTotalOf1000()
-        {
-            var sut = new SelfCheckoutMachine();
-
-            sut.Scan(Constants.SkuNumbers.WINE);
-
-            var result = sut.GetTotal();
-
-            Assert.That(result, Is.EqualTo(1000));
-        }
-
-        [Test]
-        public void Scan_WithCigarettes_ExpectTotalOf500()
-        {
-            var sut = new SelfCheckoutMachine();
-
-            sut.Scan(Constants.SkuNumbers.CIGARETTES);
-
-            var result = sut.GetTotal();
-
-            Assert.That(result, Is.EqualTo(500));
-        }
-
 
         [Test]
         public void Scan_WithTwoBagsOfChips_ExpectTotalOf400()
