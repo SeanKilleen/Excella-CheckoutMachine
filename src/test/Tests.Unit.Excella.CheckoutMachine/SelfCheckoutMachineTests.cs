@@ -114,5 +114,20 @@ namespace Tests.Unit.Excella.CheckoutMachine
 
             Assert.That(result, Is.EqualTo(400));
         }
+        [Test]
+        public void Scan_WithBonusCard_WhenScanning4Chips_OnlyDiscountsForOneGroup()
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(Constants.SkuNumbers.BONUS_CARD);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+            sut.Scan(Constants.SkuNumbers.CHIPS);
+
+            var result = sut.GetTotal();
+
+            Assert.That(result, Is.EqualTo(600));
+        }
     }
 }
