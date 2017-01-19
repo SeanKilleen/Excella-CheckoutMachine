@@ -13,7 +13,7 @@
         {
             if (SKU == Constants.SkuNumbers.CHIPS)
             {
-                _total += 200;
+                _total += 20;
             }
             if (SKU == Constants.SkuNumbers.SALSA)
             {
