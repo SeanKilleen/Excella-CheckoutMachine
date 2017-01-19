@@ -6,5 +6,9 @@
         {
             return 0;
         }
+
+        public void Scan(int SKU)
+        {
+        }
     }
 }
