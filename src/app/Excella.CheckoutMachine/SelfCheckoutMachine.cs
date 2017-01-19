@@ -17,7 +17,7 @@ namespace Excella.CheckoutMachine
                 discount = discount + (salsaCount*50);
 
                 var threeChipGroups = chipCount/3.0;
-                var chipDeals = Convert.ToInt32(Math.Floor(threeChipGroups));
+                var chipDeals = Convert.ToInt32(Math.Floor(threeChipGroups)) + 1;
                 discount = discount + (200*chipDeals);
             }
             return _total - discount;
