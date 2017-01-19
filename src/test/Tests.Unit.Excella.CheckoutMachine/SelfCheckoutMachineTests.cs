@@ -28,6 +28,9 @@ namespace Tests.Unit.Excella.CheckoutMachine
         }
 
         [TestCase(Constants.SkuNumbers.CHIPS, 200)]
+        [TestCase(Constants.SkuNumbers.SALSA, 100)]
+        [TestCase(Constants.SkuNumbers.WINE, 1000)]
+        [TestCase(Constants.SkuNumbers.CIGARETTES, 500)]
         public void Scan_WithSingleItem_ExpectTotalToBePriceOfThatItem(int singleItemSku, int expectedTotal)
         {
             var sut = new SelfCheckoutMachine();
