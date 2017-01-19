@@ -10,6 +10,7 @@ namespace Excella.CheckoutMachine
     {
         public class SkuNumbers
         {
+            public const int WINE = 789;
             public const int CHIPS = 123;
             public const int SALSA = 456;
         }

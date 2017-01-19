@@ -19,7 +19,7 @@
             {
                 _total = 100;
             }
-            if (SKU == 789)
+            if (SKU == Constants.SkuNumbers.WINE)
             {
                 _total = 1000;
             }
