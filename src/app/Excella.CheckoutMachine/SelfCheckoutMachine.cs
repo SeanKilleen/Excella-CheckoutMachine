@@ -15,7 +15,7 @@
             {
                 _total = 200;
             }
-            if (SKU == 456)
+            if (SKU == Constants.SkuNumbers.SALSA)
             {
                 _total = 100;
             }
