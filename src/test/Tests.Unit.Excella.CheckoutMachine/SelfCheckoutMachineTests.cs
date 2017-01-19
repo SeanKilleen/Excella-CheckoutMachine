@@ -42,55 +42,6 @@ namespace Tests.Unit.Excella.CheckoutMachine
         }
 
         [Test]
-        public void Scan_WithChips_ExpectTotalOf200()
-        {
-            var sut = new SelfCheckoutMachine();
-
-            sut.Scan(Constants.SkuNumbers.CHIPS); 
-
-            var result = sut.GetTotal();
-
-            Assert.That(result, Is.EqualTo(200));
-        }
-
-        [Test]
-        public void Scan_WithSalsa_ExpectTotalOf100()
-        {
-            var sut = new SelfCheckoutMachine();
-
-            sut.Scan(Constants.SkuNumbers.SALSA);
-
-            var result = sut.GetTotal();
-
-            Assert.That(result, Is.EqualTo(100));
-        }
-
-        [Test]
-        public void Scan_WithWine_ExpectTotalOf1000()
-        {
-            var sut = new SelfCheckoutMachine();
-
-            sut.Scan(Constants.SkuNumbers.WINE);
-
-            var result = sut.GetTotal();
-
-            Assert.That(result, Is.EqualTo(1000));
-        }
-
-        [Test]
-        public void Scan_WithCigarettes_ExpectTotalOf500()
-        {
-            var sut = new SelfCheckoutMachine();
-
-            sut.Scan(Constants.SkuNumbers.CIGARETTES);
-
-            var result = sut.GetTotal();
-
-            Assert.That(result, Is.EqualTo(500));
-        }
-
-
-        [Test]
         public void Scan_WithTwoBagsOfChips_ExpectTotalOf400()
         {
             var sut = new SelfCheckoutMachine();
