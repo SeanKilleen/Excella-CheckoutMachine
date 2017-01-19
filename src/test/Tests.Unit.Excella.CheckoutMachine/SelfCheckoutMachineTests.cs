@@ -58,7 +58,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         }
 
         [Test]
-        public void Scan_WithOneOfEachItem_ExpectTotalOf1800()
+        public void Scan_WithOneOfEachItem_ExpectTotalOf1850()
         {
             var sut = new SelfCheckoutMachine();
 
@@ -69,7 +69,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
 
             var result = sut.GetTotal();
 
-            Assert.That(result, Is.EqualTo(1800));
+            Assert.That(result, Is.EqualTo(1850));
         }
 
         [Test]
