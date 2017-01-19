@@ -40,7 +40,10 @@ An example test scenario to build to: "When I scan 5 chips, 3 salsas, 2 wine, 2 
 * We will attempt to break the work down into github issues & PRs, so that you can follow along with the work as it progresses and really get a sense of the work breakdown.
 
 # Prerequisites
-Your experience working on this project will work best if 
+Your experience working on this project will work best if you have:
+
+* .NET 4.5 
+* Microsoft Visual Studio 2015 or later (though 2013 should work)
 
 # How do I build this project?
 * Clone or fork the project on Github (or download the source as a zip file)
