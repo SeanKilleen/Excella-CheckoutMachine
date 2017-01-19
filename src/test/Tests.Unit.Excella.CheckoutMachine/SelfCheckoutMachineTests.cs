@@ -44,7 +44,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         [TestCase(Constants.SkuNumbers.CHIPS, 400)]
         [TestCase(Constants.SkuNumbers.SALSA, 200)]
         [TestCase(Constants.SkuNumbers.WINE, 2000)]
-        [TestCase(Constants.SkuNumbers.CIGARETTES, 1000)]
+        [TestCase(Constants.SkuNumbers.CIGARETTES, 1100)]
         public void Scan_WithTwoOfAnItem_ExpectTotalToBeTwiceTheItemPrice(int sku, int expectedTotal)
         {
             var sut = new SelfCheckoutMachine();
