@@ -84,5 +84,20 @@ namespace Tests.Unit.Excella.CheckoutMachine
 
             Assert.That(result, Is.EqualTo(50));
         }
+
+        [Test]
+        public void Scan_WithBonusCard_WhenScanningMultipleSalsas_ExpectThemAllToBeHalfOff()
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(Constants.SkuNumbers.BONUS_CARD);
+            sut.Scan(Constants.SkuNumbers.SALSA);
+            sut.Scan(Constants.SkuNumbers.SALSA);
+            sut.Scan(Constants.SkuNumbers.SALSA);
+
+            var result = sut.GetTotal();
+
+            Assert.That(result, Is.EqualTo(150));
+        }
     }
 }
