@@ -6,6 +6,7 @@
 
         private bool _bonusCardScanned = false;
         private int salsaCount = 0;
+        private int chipCount = 0;
         public int GetTotal()
         {
             int discount = 0;
@@ -24,6 +25,7 @@
             }
             if (SKU == Constants.SkuNumbers.CHIPS)
             {
+                chipCount++;
                 _total += 200;
             }
             if (SKU == Constants.SkuNumbers.SALSA)
