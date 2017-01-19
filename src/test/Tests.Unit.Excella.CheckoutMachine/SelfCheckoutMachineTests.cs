@@ -26,5 +26,17 @@ namespace Tests.Unit.Excella.CheckoutMachine
 
             Assert.That(result, Is.EqualTo(0));
         }
+
+        [Test]
+        public void Scan_WithChips_ExpectTotalOf200()
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(123); 
+
+            var result = sut.GetTotal();
+
+            Assert.That(result, Is.EqualTo(200));
+        }
     }
 }
