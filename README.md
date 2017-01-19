@@ -24,9 +24,13 @@ You must adhere to the following rules:
  * public void Scan (int sku)
  * public int GetTotal()
 
- You are encouraged to take baby steps and solve for simple cases first.
+Other helpful notes:
 
- An example test scenario to build to: "When I scan 5 chips, 3 salsas, 2 wine, 2 cigarettes, and a bonus card, the total should be 4050".
+* You are encouraged to take baby steps and solve for simple cases first.
+* The bonus card concept is implicit; you may choose any SKU to represent a bonus card
+
+
+An example test scenario to build to: "When I scan 5 chips, 3 salsas, 2 wine, 2 cigarettes, and a bonus card, the total should be 4050".
 
 
 # What will this repo do?
