@@ -21,7 +21,7 @@
             }
             if (SKU == Constants.SkuNumbers.WINE)
             {
-                _total = 1000;
+                _total += 1000;
             }
             if (SKU == Constants.SkuNumbers.CIGARETTES)
             {
