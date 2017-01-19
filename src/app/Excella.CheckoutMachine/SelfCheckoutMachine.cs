@@ -11,7 +11,7 @@
 
         public void Scan(int SKU)
         {
-            if (SKU == 123)
+            if (SKU == Constants.SkuNumbers.CHIPS)
             {
                 _total = 200;
             }
