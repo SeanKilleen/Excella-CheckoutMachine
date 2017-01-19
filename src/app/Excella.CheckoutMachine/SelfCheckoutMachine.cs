@@ -9,9 +9,11 @@ namespace Excella.CheckoutMachine
         private bool _bonusCardScanned = false;
         private int salsaCount = 0;
         private int chipCount = 0;
+        private int tobaccoCount = 0;
         public int GetTotal()
         {
             int discount = 0;
+            _total = _total + (50 * tobaccoCount);
             if (_bonusCardScanned)
             {
                 discount = discount + (salsaCount*50);
@@ -45,6 +47,7 @@ namespace Excella.CheckoutMachine
             }
             if (SKU == Constants.SkuNumbers.CIGARETTES)
             {
+                tobaccoCount++;
                 _total += 500;
             }
         }

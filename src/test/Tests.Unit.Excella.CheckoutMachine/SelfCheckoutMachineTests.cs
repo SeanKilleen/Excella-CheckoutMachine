@@ -30,7 +30,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         [TestCase(Constants.SkuNumbers.CHIPS, 200)]
         [TestCase(Constants.SkuNumbers.SALSA, 100)]
         [TestCase(Constants.SkuNumbers.WINE, 1000)]
-        [TestCase(Constants.SkuNumbers.CIGARETTES, 500)]
+        [TestCase(Constants.SkuNumbers.CIGARETTES, 550)]
         public void Scan_WithSingleItem_ExpectTotalToBePriceOfThatItem(int singleItemSku, int expectedTotal)
         {
             var sut = new SelfCheckoutMachine();
@@ -44,7 +44,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         [TestCase(Constants.SkuNumbers.CHIPS, 400)]
         [TestCase(Constants.SkuNumbers.SALSA, 200)]
         [TestCase(Constants.SkuNumbers.WINE, 2000)]
-        [TestCase(Constants.SkuNumbers.CIGARETTES, 1000)]
+        [TestCase(Constants.SkuNumbers.CIGARETTES, 1100)]
         public void Scan_WithTwoOfAnItem_ExpectTotalToBeTwiceTheItemPrice(int sku, int expectedTotal)
         {
             var sut = new SelfCheckoutMachine();
@@ -58,7 +58,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
         }
 
         [Test]
-        public void Scan_WithOneOfEachItem_ExpectTotalOf1800()
+        public void Scan_WithOneOfEachItem_ExpectTotalOf1850()
         {
             var sut = new SelfCheckoutMachine();
 
@@ -69,7 +69,7 @@ namespace Tests.Unit.Excella.CheckoutMachine
 
             var result = sut.GetTotal();
 
-            Assert.That(result, Is.EqualTo(1800));
+            Assert.That(result, Is.EqualTo(1850));
         }
 
         [Test]
@@ -190,6 +190,18 @@ namespace Tests.Unit.Excella.CheckoutMachine
             var result = sut.GetTotal();
 
             Assert.That(result, Is.EqualTo(1150));
+        }
+
+        [Test]
+        public void Scan_Cigarettes_WithTobaccoSurcharge_ExpectTotalToBe550()
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(Constants.SkuNumbers.CIGARETTES);
+
+            var total = sut.GetTotal();
+
+            Assert.That(total, Is.EqualTo(550));
         }
     }
 }
