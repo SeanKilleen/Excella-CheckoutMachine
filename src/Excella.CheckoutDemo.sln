@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excella.CheckoutMachine", "app\Excella.CheckoutMachine\Excella.CheckoutMachine.csproj", "{16453939-15B4-4BF4-9A73-4281546B8150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Unit.Excella.CheckoutMachine", "test\Tests.Unit.Excella.CheckoutMachine\Tests.Unit.Excella.CheckoutMachine.csproj", "{3D7AB6C1-DFF3-4B9B-88DF-6A3C05B14A0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16453939-15B4-4BF4-9A73-4281546B8150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16453939-15B4-4BF4-9A73-4281546B8150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16453939-15B4-4BF4-9A73-4281546B8150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16453939-15B4-4BF4-9A73-4281546B8150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D7AB6C1-DFF3-4B9B-88DF-6A3C05B14A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D7AB6C1-DFF3-4B9B-88DF-6A3C05B14A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D7AB6C1-DFF3-4B9B-88DF-6A3C05B14A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D7AB6C1-DFF3-4B9B-88DF-6A3C05B14A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
