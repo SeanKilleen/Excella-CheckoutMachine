@@ -38,5 +38,17 @@ namespace Tests.Unit.Excella.CheckoutMachine
 
             Assert.That(result, Is.EqualTo(200));
         }
+
+        [Test]
+        public void Scan_WithSalsa_ExpectTotalOf100()
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(456);
+
+            var result = sut.GetTotal();
+
+            Assert.That(result, Is.EqualTo(100));
+        }
     }
 }
