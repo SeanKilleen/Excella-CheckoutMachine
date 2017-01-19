@@ -41,6 +41,22 @@ namespace Tests.Unit.Excella.CheckoutMachine
             Assert.That(result, Is.EqualTo(expectedTotal));
         }
 
+        [TestCase(Constants.SkuNumbers.CHIPS, 400)]
+        [TestCase(Constants.SkuNumbers.SALSA, 200)]
+        [TestCase(Constants.SkuNumbers.WINE, 2000)]
+        [TestCase(Constants.SkuNumbers.CIGARETTES, 1000)]
+        public void Scan_WithTwoOfAnItem_ExpectTotalToBeTwiceTheItemPrice(int sku, int expectedTotal)
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(sku);
+            sut.Scan(sku);
+
+            var result = sut.GetTotal();
+
+            Assert.That(result, Is.EqualTo(expectedTotal));
+        }
+
         [Test]
         public void Scan_WithTwoBagsOfChips_ExpectTotalOf400()
         {
