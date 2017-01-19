@@ -88,5 +88,18 @@ namespace Tests.Unit.Excella.CheckoutMachine
 
             Assert.That(result, Is.EqualTo(400));
         }
+
+        [Test]
+        public void Scan_WithTwoSalsasChips_ExpectTotalOf200()
+        {
+            var sut = new SelfCheckoutMachine();
+
+            sut.Scan(Constants.SkuNumbers.SALSA);
+            sut.Scan(Constants.SkuNumbers.SALSA);
+
+            var result = sut.GetTotal();
+
+            Assert.That(result, Is.EqualTo(200));
+        }
     }
 }
