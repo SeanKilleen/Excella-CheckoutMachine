@@ -13,6 +13,7 @@ namespace Excella.CheckoutMachine
         public int GetTotal()
         {
             int discount = 0;
+            _total = _total + (50 * tobaccoCount);
             if (_bonusCardScanned)
             {
                 discount = discount + (salsaCount*50);
