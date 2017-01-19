@@ -6,6 +6,15 @@ namespace Tests.Unit.Excella.CheckoutMachine
 {
     public class SelfCheckoutMachineTests
     {
+        private SelfCheckoutMachine sut;
+        private Mock<IInventoryControlSystem> mockInventoryControl;
+
+        [SetUp]
+        public void Setup()
+        {
+            mockInventoryControl = new Mock<IInventoryControlSystem>();
+            sut = new SelfCheckoutMachine(mockInventoryControl.Object);
+        }
 
         [Test]
         public void GetTotal_WithNoItemsScanned_Returns0()
